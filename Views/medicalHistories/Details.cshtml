@@ -1,0 +1,42 @@
+﻿@model HospitalManagementSystem.Models.medicalHistory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>medicalHistory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.disease)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.disease)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.diseaseDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.diseaseDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.testDetails)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.testDetails)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.patients)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.patients.bloodGroup)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.medicalId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

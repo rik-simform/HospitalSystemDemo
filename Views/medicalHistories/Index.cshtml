@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HospitalManagementSystem.Models.medicalHistory>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.disease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diseaseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.testDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patients)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.disease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diseaseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.testDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patients.bloodGroup)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.medicalId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.medicalId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.medicalId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
